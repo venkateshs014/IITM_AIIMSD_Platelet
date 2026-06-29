@@ -1,1 +1,38 @@
-.venv
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python caches / build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Data and generated outputs (keep large EM images and results out of git)
+data/
+output/
+output_batch/
+*.tif
+*.tiff
+debug_polygon_mask.png
+platelet_dual_threshold_final.png
+activation_analysis_results.png
+
+# Large model files (distributed via Google Drive, not git)
+*.pkl
+*.pt
+*.pth
+*.h5
+models/*.pkl
+!models/.gitkeep

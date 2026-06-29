@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "platelet-em"
+version = "0.1.0"
+description = "Segmentation-centric deep-learning framework for automated ultrastructural analysis of platelet activation in electron-microscopy images."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "DMST, IIT Madras & AIIMS Delhi" },
+]
+keywords = [
+    "platelet activation",
+    "electron microscopy",
+    "instance segmentation",
+    "deep learning",
+    "hematology",
+    "computer vision",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "opencv-python>=4.5",
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "scikit-image>=0.19",
+    "scikit-learn>=1.0",
+    "pandas>=1.3",
+    "matplotlib>=3.4",
+    "seaborn>=0.11",
+    "openpyxl>=3.0",
+]
+
+[project.optional-dependencies]
+# Phase 2 (deep learning) reference stack from the paper.
+deep-learning = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "albumentations>=1.3",
+]
+
+[project.scripts]
+platelet-em = "platelet_em.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
